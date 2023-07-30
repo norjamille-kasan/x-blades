@@ -3,17 +3,26 @@
     'icon' => null,
     'label' => null,
     'required' => false,
+    'cornerHint' => '',
+    'hint' => '',
 ])
 
 <div>
-    @if ($label)
-        <label class="block font-medium text-gray-700 mb-1" for="{{ $attributes->get('id') }}">
-            {{ $label }}
-            @if ($required)
-                <span class="text-red-600">*</span>
-            @endif
-        </label>
-    @endif
+    <div class="flex justify-between items-center">
+        @if ($label)
+            <label class="block font-medium text-gray-700 mb-1" for="{{ $attributes->get('id') }}">
+                {{ $label }}
+                @if ($required)
+                    <span class="text-red-600">*</span>
+                @endif
+            </label>
+        @endif
+        @if ($cornerHint !== '')
+            <span class="text-xs text-gray-500">
+                {{ $cornerHint }}
+            </span>
+        @endif
+    </div>
     <div class="relative">
         @if ($icon)
             <span class="absolute top-3 bg-transparent left-2 text-gray-500">{{ $icon }}</span>
@@ -29,6 +38,11 @@
             {{ $slot }}
         </select>
     </div>
+    @if ($hint !== '')
+        <span class=" text-gray-400">
+            {{ $hint }}
+        </span>
+    @endif
     @if ($errors->has($attributes->wire('model')->value))
         <p class="mt-1 text-sm text-red-600">{{ $errors->first($attributes->wire('model')->value) }}</p>
     @endif

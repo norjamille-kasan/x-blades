@@ -4,10 +4,11 @@
     'label' => null,
     'required' => false,
     'cornerHint' => '',
+    'hint' => '',
 ])
 
 <div>
-    <div class="flex justify-between">
+    <div class="flex justify-between items-center">
         @if ($label)
             <label class="block font-medium text-gray-700 mb-1" for="{{ $attributes->get('id') }}">
                 {{ $label }}
@@ -17,9 +18,9 @@
             </label>
         @endif
         @if ($cornerHint !== '')
-            <div class="text-sm text-gray-500">
+            <span class="text-xs text-gray-500">
                 {{ $cornerHint }}
-            </div>
+            </span>
         @endif
     </div>
     <div class="relative">
@@ -35,6 +36,11 @@
             'pl-8' => $icon != null,
         ]) />
     </div>
+    @if ($hint !== '')
+        <span class=" text-gray-400">
+            {{ $hint }}
+        </span>
+    @endif
     @if ($errors->has($attributes->wire('model')->value))
         <p class="mt-1 text-sm text-red-600">{{ $errors->first($attributes->wire('model')->value) }}</p>
     @endif
