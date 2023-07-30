@@ -3,17 +3,25 @@
     'icon' => null,
     'label' => null,
     'required' => false,
+    'cornerHint' => '',
 ])
 
 <div>
-    @if ($label)
-        <label class="block font-medium text-gray-700 mb-1" for="{{ $attributes->get('id') }}">
-            {{ $label }}
-            @if ($required)
-                <span class="text-red-600">*</span>
-            @endif
-        </label>
-    @endif
+    <div class="flex justify-between">
+        @if ($label)
+            <label class="block font-medium text-gray-700 mb-1" for="{{ $attributes->get('id') }}">
+                {{ $label }}
+                @if ($required)
+                    <span class="text-red-600">*</span>
+                @endif
+            </label>
+        @endif
+        @if ($cornerHint !== '')
+            <div class="text-sm text-gray-500">
+                {{ $cornerHint }}
+            </div>
+        @endif
+    </div>
     <div class="relative">
         @if ($icon)
             <span class="absolute top-3 bg-transparent left-2 text-gray-500">{{ $icon }}</span>
