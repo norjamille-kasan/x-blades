@@ -15,6 +15,8 @@
 
 <body class="font-sans antialiased">
     @yield('content')
+
+    <x-ui.toaster />
     @livewireScripts
 </body>
 
