@@ -17,7 +17,7 @@
     {{ $attributes->wire('click') }} {{ $attributes->whereStartsWith('x') }} wire:loading.attr="disabled"
     @if ($loading) wire:target="{{ $loading }}" @endif
     wire:loading.class="cursor-progress bg-gray-50" @class([
-        'px-3 py-2 text-sm rounded-lg  items-center justify-center  inline-flex font-medium',
+        'px-3 py-2 text-sm rounded-md  items-center justify-center  inline-flex font-medium',
         'border bg-white border-gray-300 hover:bg-gray-50 text-gray-900' =>
             $color === 'default',
         'bg-green-600 text-white hover:bg-green-70 ' => $color === 'green',

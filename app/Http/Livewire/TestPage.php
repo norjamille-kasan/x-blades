@@ -16,10 +16,7 @@ class TestPage extends Component
 
     public function handleTest()
     {
-        $this->validate([
-            'test' => 'required'
-        ]);
-        $this->toastError(
+        $this->toastSuccess(
             $title = "Success",
             $message = "This is a success message"
         );

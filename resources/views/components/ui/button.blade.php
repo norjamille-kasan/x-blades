@@ -17,17 +17,17 @@
     {{ $attributes->wire('click') }} {{ $attributes->whereStartsWith('x') }} wire:loading.attr="disabled"
     @if ($loading) wire:target="{{ $loading }}" @endif
     wire:loading.class="cursor-progress bg-gray-50" @class([
-        'px-3 py-2 text-sm rounded-lg  items-center justify-center  inline-flex font-medium',
+        'px-3 py-2 text-sm rounded-md shadow items-center justify-center  inline-flex font-medium',
         'border bg-white border-gray-300 hover:bg-gray-50 text-gray-900' =>
             $color === 'default',
-        'bg-green-600 text-white hover:bg-green-70 ' => $color === 'green',
-        'bg-blue-600 text-white hover:bg-blue-70 ' => $color === 'blue',
-        'bg-red-600 text-white hover:bg-red-70 ' => $color === 'red',
-        'bg-indigo-600 text-white hover:bg-indigo-70 ' => $color === 'indigo',
-        'bg-emerald-600 text-white hover:bg-emerald-70 ' => $color === 'emerald',
-        'bg-pink-600 text-white hover:bg-pink-70 ' => $color === 'pink',
-        'bg-gray-600 text-white hover:bg-gray-70 ' => $color === 'gray',
-        'bg-yellow-600 text-white hover:bg-yellow-70 ' => $color === 'yellow',
+        'bg-green-600 text-white hover:bg-green-700 ' => $color === 'green',
+        'bg-blue-600 text-white hover:bg-blue-700 ' => $color === 'blue',
+        'bg-red-600 text-white hover:bg-red-700 ' => $color === 'red',
+        'bg-indigo-600 text-white hover:bg-indigo-700 ' => $color === 'indigo',
+        'bg-emerald-600 text-white hover:bg-emerald-700 ' => $color === 'emerald',
+        'bg-pink-600 text-white hover:bg-pink-700 ' => $color === 'pink',
+        'bg-gray-600 text-white hover:bg-gray-700 ' => $color === 'gray',
+        'bg-yellow-600 text-white hover:bg-yellow-700 ' => $color === 'yellow',
         'bg-black text-white hover:bg-black/90' => $color === 'black',
         //   add/remove colors as you want ------
     ])>
