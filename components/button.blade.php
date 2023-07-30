@@ -17,8 +17,8 @@
     {{ $attributes->wire('click') }} {{ $attributes->whereStartsWith('x') }} wire:loading.attr="disabled"
     @if ($loading) wire:target="{{ $loading }}" @endif
     wire:loading.class="cursor-progress bg-gray-50" @class([
-        'px-3 py-1.5 text-sm rounded-lg  items-center justify-center  inline-flex font-medium',
-        'border border-gray-300 hover:bg-gray-50 text-gray-900' =>
+        'px-3 py-2 text-sm rounded-lg  items-center justify-center  inline-flex font-medium',
+        'border bg-white border-gray-300 hover:bg-gray-50 text-gray-900' =>
             $color === 'default',
         'bg-green-600 text-white hover:bg-green-70 ' => $color === 'green',
         'bg-blue-600 text-white hover:bg-blue-70 ' => $color === 'blue',
@@ -44,10 +44,10 @@
         </svg>
         {{-- change loading icon as you want --}}
     @endif
-    @if ($rightIcon)
+    @if ($leftIcon)
         <span @if ($loading) wire:loading.remove @endif
-            @if ($rightIcon) class="mr-2" @endif>
-            {{ $rightIcon }}
+            @if ($leftIcon) class="mr-2" @endif>
+            {{ $leftIcon }}
         </span>
     @endif
     {{ $slot }}
@@ -63,9 +63,9 @@
             {{ $label }}
         </span>
     @endif
-    @if ($leftIcon)
-        <span @if ($leftIcon) class="ml-2" @endif>
-            {{ $leftIcon }}
+    @if ($rightIcon)
+        <span @if ($rightIcon) class="ml-2" @endif>
+            {{ $rightIcon }}
         </span>
     @endif
     </{{ $tag }}>
